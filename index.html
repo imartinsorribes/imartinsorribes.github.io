@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Iñaki Martín Sorribes. Co-fundador de Iceberg Datum Analytics y estudiante de Ciencia de Datos en la Universitat de València. Portfolio de proyectos en ML, NLP y datos." />
+    <meta name="author" content="Iñaki Martín Sorribes" />
+    <title>Iñaki Martín Sorribes</title>
+
+    <meta property="og:title" content="Iñaki Martín Sorribes" />
+    <meta property="og:description" content="Co-fundador de Iceberg Datum Analytics. ML, NLP y datos." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://imartinsorribes.github.io" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['"Fraunces"', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+                    },
+                    colors: {
+                        ink: '#0e0f12',
+                        bone: '#e8e6e3',
+                        gold: '#f0b400',
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            background: #0e0f12;
+            color: #e8e6e3;
+            min-height: 100vh;
+        }
+        ::selection { background: #f0b400; color: #0e0f12; }
+
+        /* Subtle dotted grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
+            background-size: 32px 32px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        a.gold-hover {
+            transition: color 0.15s ease;
+            text-underline-offset: 4px;
+        }
+        a.gold-hover:hover {
+            color: #f0b400;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(232, 230, 227, 0.06);
+        }
+        .row:last-child { border-bottom: none; }
+
+        .reveal { opacity: 0; transform: translateY(12px); transition: all 0.5s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+
+<body class="font-sans antialiased">
+
+    <!-- Hero -->
+    <header class="max-w-3xl mx-auto px-6 pt-32 pb-32">
+        <img src="assets/avatar.png"
+             alt="Iñaki Martín Sorribes"
+             class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border border-white/10 mb-8" />
+
+        <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight leading-[1.05] text-bone">
+            Iñaki Martín<br/>Sorribes
+        </h1>
+
+        <p class="mt-10 text-xl md:text-2xl leading-relaxed text-white/80 max-w-2xl font-light">
+            Construyo sistemas de
+            <span class="text-bone">machine learning</span> y
+            <span class="text-bone">NLP</span> en producción.
+        </p>
+        <p class="mt-4 text-base md:text-lg leading-relaxed text-white/55 max-w-2xl font-light">
+            Co-fundador de
+            <span class="text-bone">Iceberg Datum Analytics</span>
+            y estudiante de Ciencia de Datos en la
+            <span class="text-bone">Universitat de València</span>.
+            Disponible para prácticas a partir de septiembre de 2026.
+        </p>
+
+        <div class="mt-12 flex flex-wrap items-center gap-x-7 gap-y-3 text-[14px]">
+            <a href="https://github.com/imartinsorribes" target="_blank" rel="noopener" class="text-bone gold-hover underline decoration-white/20 decoration-1 underline-offset-4">
+                GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/inaki-martin-sorribes/" target="_blank" rel="noopener" class="text-bone gold-hover underline decoration-white/20 decoration-1 underline-offset-4">
+                LinkedIn
+            </a>
+            <a href="mailto:imxrtins@gmail.com" class="text-bone gold-hover underline decoration-white/20 decoration-1 underline-offset-4">
+                imxrtins@gmail.com
+            </a>
+            <a href="assets/cv-es.pdf" download="Inaki_Martin_Sorribes_CV_ES.pdf" class="text-bone gold-hover underline decoration-white/20 decoration-1 underline-offset-4">
+                CV (ES)
+            </a>
+            <a href="assets/cv-en.pdf" download="Inaki_Martin_Sorribes_CV_EN.pdf" class="text-bone gold-hover underline decoration-white/20 decoration-1 underline-offset-4">
+                CV (EN)
+            </a>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="max-w-3xl mx-auto px-6 py-20 reveal">
+        <p class="text-[13px] text-gold uppercase tracking-[0.2em] mb-10 font-medium">
+            Sobre mí
+        </p>
+
+        <div class="space-y-6 text-lg leading-relaxed text-white/75 max-w-2xl font-light">
+            <p>
+                Empecé el grado en la UV en 2023 con la idea de dedicarme a
+                la IA aplicada — no a la investigación pura, sino a productos
+                que resuelven algo concreto. En noviembre de 2025 co-fundé
+                <span class="text-bone">Iceberg Datum Analytics</span>, donde
+                he desarrollado motores de ML y NLP, integraciones con LLMs
+                y arquitecturas en AWS para los productos verticales de la
+                empresa.
+            </p>
+            <p>
+                En verano de 2026 voy a estar en el
+                <span class="text-bone">IDAL</span>, el laboratorio de
+                Machine Learning de la Universitat de València, en una
+                estancia de investigación. A partir de septiembre busco
+                prácticas como
+                <span class="text-bone">ML / NLP engineer</span> o
+                <span class="text-bone">data scientist</span> en cualquier
+                sector con datos serios — fintech, retail, industrial,
+                salud, energía. Lo que me importa es llevar modelos a
+                producción y trabajar con problemas reales,
+                preferentemente en Valencia o cerca.
+            </p>
+        </div>
+    </section>
+
+    <!-- Stack -->
+    <section class="max-w-3xl mx-auto px-6 py-20 reveal">
+        <p class="text-[13px] text-gold uppercase tracking-[0.2em] mb-10 font-medium">
+            Lo que uso
+        </p>
+
+        <div class="space-y-10 text-white/75 font-light">
+
+            <div>
+                <p class="text-[12px] text-gold uppercase tracking-wider mb-3 font-medium">
+                    A diario
+                </p>
+                <p class="text-[15px] leading-relaxed max-w-2xl">
+                    Python, scikit-learn, XGBoost, SHAP, Pandas, NumPy,
+                    FastAPI, Pydantic, pytest, Docker, Git,
+                    Claude, Gemini, Ollama, AWS (ECS Fargate, S3, IAM,
+                    CloudWatch), HTMX, Tailwind, Leaflet.
+                </p>
+            </div>
+
+            <div>
+                <p class="text-[12px] text-white/40 uppercase tracking-wider mb-3 font-medium">
+                    También trabajo con
+                </p>
+                <p class="text-[15px] leading-relaxed max-w-2xl text-white/55">
+                    R, SQL, Bash, PyTorch, Transformers, spaCy, Presidio,
+                    MongoDB, Streamlit, Power BI, QGIS, rasterio.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Work / Experience -->
+    <section id="work" class="max-w-3xl mx-auto px-6 py-20 reveal">
+        <p class="text-[13px] text-gold uppercase tracking-[0.2em] mb-10 font-medium">
+            Trabajo
+        </p>
+
+        <div>
+            <!-- Iceberg -->
+            <div class="row">
+                <div class="font-mono text-[12px] text-white/40 pt-1 whitespace-nowrap">
+                    Nov 2025<br/>— hoy
+                </div>
+                <div>
+                    <h3 class="text-bone text-lg font-medium">
+                        Co-fundador
+                        <span class="text-white/40 font-light">· Iceberg Datum Analytics</span>
+                    </h3>
+                    <p class="text-white/65 mt-2 leading-relaxed font-light">
+                        He desarrollado los motores ML y NLP que componen los
+                        productos verticales en sectores clínico (Iceberg
+                        Health) y legal (Iceberg Law, anonimización GDPR).
+                        Integraciones con LLMs locales y en cloud, despliegue
+                        sobre AWS y pilotos activos bajo NDA con clientes.
+                    </p>
+                </div>
+            </div>
+
+            <!-- IDAL -->
+            <div class="row">
+                <div class="font-mono text-[12px] text-white/40 pt-1 whitespace-nowrap">
+                    Verano<br/>2026
+                </div>
+                <div>
+                    <h3 class="text-bone text-lg font-medium">
+                        Investigador en prácticas
+                        <span class="text-white/40 font-light">· IDAL — UV</span>
+                    </h3>
+                    <p class="text-white/65 mt-2 leading-relaxed font-light">
+                        Seleccionado para una estancia de investigación en el
+                        Intelligent Data Analysis Laboratory, el grupo de ML de
+                        la Universitat de València.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Slimbook -->
+            <div class="row">
+                <div class="font-mono text-[12px] text-white/40 pt-1 whitespace-nowrap">
+                    2022
+                </div>
+                <div>
+                    <h3 class="text-bone text-lg font-medium">
+                        Prácticas
+                        <span class="text-white/40 font-light">· Slimbook</span>
+                    </h3>
+                    <p class="text-white/65 mt-2 leading-relaxed font-light">
+                        Cuatro meses ensamblando hardware y escribiendo
+                        scripts en Bash para automatizar el testeo de equipos.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <p class="text-[13px] text-gold uppercase tracking-[0.2em] mt-20 mb-10 font-medium">
+            Formación
+        </p>
+        <div>
+            <div class="row">
+                <div class="font-mono text-[12px] text-white/40 pt-1 whitespace-nowrap">
+                    2023<br/>— 2027
+                </div>
+                <div>
+                    <h3 class="text-bone text-lg font-medium">
+                        Grado en Ciencia de Datos
+                        <span class="text-white/40 font-light">· Universitat de València</span>
+                    </h3>
+                    <p class="text-white/65 mt-2 leading-relaxed font-light">
+                        Nota media <span class="text-bone">7,58 / 10</span>.
+                        Matrículas de Honor en
+                        <span class="text-gold">Machine Learning</span> y en
+                        <span class="text-gold">Probabilidad y Simulación</span>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="font-mono text-[12px] text-white/40 pt-1 whitespace-nowrap">
+                    2020<br/>— 2022
+                </div>
+                <div>
+                    <h3 class="text-bone text-lg font-medium">
+                        Grado Superior en Informática
+                        <span class="text-white/40 font-light">· IES Abastos</span>
+                    </h3>
+                    <p class="text-white/65 mt-2 leading-relaxed font-light">
+                        Administración de Sistemas en Red.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Awards -->
+        <p class="text-[13px] text-gold uppercase tracking-[0.2em] mt-20 mb-10 font-medium">
+            Reconocimientos
+        </p>
+        <div class="row">
+            <div class="font-mono text-[12px] text-white/40 pt-1 whitespace-nowrap">
+                2025
+            </div>
+            <div>
+                <h3 class="text-bone text-lg font-medium">
+                    Mención de Honor
+                    <span class="text-white/40 font-light">· Concurso de Visualización de Datos · Ayuntamiento de Valencia + ETSE-UV</span>
+                </h3>
+                <p class="text-white/65 mt-2 leading-relaxed font-light">
+                    Proyecto en equipo sobre zonas inundables de la Comunidad
+                    Valenciana, en respuesta a la DANA.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="max-w-3xl mx-auto px-6 py-20 reveal">
+        <p class="text-[13px] text-gold uppercase tracking-[0.2em] mb-10 font-medium">
+            Proyectos
+        </p>
+
+        <ol class="space-y-12">
+
+            <!-- Fraud Detection -->
+            <li>
+                <div class="flex items-baseline gap-4 mb-3">
+                    <span class="font-mono text-[12px] text-gold">01</span>
+                    <h3 class="font-display text-2xl text-bone font-medium">
+                        Fraud Detection — PaySim
+                    </h3>
+                    <span class="font-mono text-[10px] uppercase tracking-wider text-emerald-400/80 ml-auto whitespace-nowrap">público</span>
+                </div>
+                <p class="text-white/70 leading-relaxed font-light max-w-2xl">
+                    Pipeline ML completo sobre 6,3 millones de transacciones de
+                    PaySim. Comparativa entre Random Forest, XGBoost y MLP;
+                    explicabilidad con SHAP; selección de umbral con criterio
+                    económico (€ perdidos vs revisiones manuales) y servicio
+                    REST con FastAPI sobre Docker.
+                    <span class="text-bone">Recall 99,76 %</span> en test.
+                </p>
+                <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 font-mono text-[11px] text-white/40">
+                    <span>XGBoost</span><span>SHAP</span><span>FastAPI</span><span>Docker</span><span>pytest</span>
+                </div>
+                <a href="https://github.com/imartinsorribes/fraud-detection-paysim" target="_blank" rel="noopener" class="inline-block mt-3 font-mono text-[12px] text-bone gold-hover underline decoration-white/20 underline-offset-4">
+                    ver repo →
+                </a>
+            </li>
+
+            <!-- Iberia Geo-Alert -->
+            <li>
+                <div class="flex items-baseline gap-4 mb-3">
+                    <span class="font-mono text-[12px] text-gold">02</span>
+                    <h3 class="font-display text-2xl text-bone font-medium">
+                        Iberia Geo-Alert
+                    </h3>
+                    <span class="font-mono text-[10px] uppercase tracking-wider text-emerald-400/80 ml-auto whitespace-nowrap">público</span>
+                </div>
+                <p class="text-white/70 leading-relaxed font-light max-w-2xl">
+                    Dashboard real-time de eventos naturales agregando cuatro
+                    APIs (USGS, NASA EONET, NASA FIRMS, Sentinel Hub). Al hacer
+                    click en un foco de incendio en Iberia se dispara un
+                    análisis NBR sobre imágenes Sentinel-2 calculado en el
+                    backend y devuelto con la imagen en base64. Todo en un solo
+                    feed.
+                </p>
+                <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 font-mono text-[11px] text-white/40">
+                    <span>FastAPI</span><span>Sentinel Hub</span><span>Leaflet</span><span>NumPy</span><span>geospatial</span>
+                </div>
+                <a href="https://github.com/imartinsorribes/iberia-geo-alert" target="_blank" rel="noopener" class="inline-block mt-3 font-mono text-[12px] text-bone gold-hover underline decoration-white/20 underline-offset-4">
+                    ver repo →
+                </a>
+            </li>
+
+            <!-- GDPR Anonymizer -->
+            <li>
+                <div class="flex items-baseline gap-4 mb-3">
+                    <span class="font-mono text-[12px] text-gold">03</span>
+                    <h3 class="font-display text-2xl text-bone font-medium">
+                        GDPR Anonymization Engine
+                    </h3>
+                    <span class="font-mono text-[10px] uppercase tracking-wider text-amber-400/80 ml-auto whitespace-nowrap">case study</span>
+                </div>
+                <p class="text-white/70 leading-relaxed font-light max-w-2xl">
+                    Motor de anonimización forense de PDFs legales en español,
+                    100 % on-premise. Combina regex, checksums matemáticos
+                    (DNI, IBAN, NSS), NER con BSC-RoBERTa, LLM local Qwen3:8b
+                    vía Ollama y OCR. Cero alucinaciones gracias a la
+                    prioridad checksum &gt; regex &gt; NER &gt; LLM. Código
+                    propietario; el repo documenta la arquitectura.
+                </p>
+                <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 font-mono text-[11px] text-white/40">
+                    <span>NLP</span><span>Ollama</span><span>PyMuPDF</span><span>Presidio</span><span>GDPR</span>
+                </div>
+                <a href="https://github.com/imartinsorribes/gdpr-anonymization-engine" target="_blank" rel="noopener" class="inline-block mt-3 font-mono text-[12px] text-bone gold-hover underline decoration-white/20 underline-offset-4">
+                    ver case study →
+                </a>
+            </li>
+
+            <!-- Iceberg Health -->
+            <li>
+                <div class="flex items-baseline gap-4 mb-3">
+                    <span class="font-mono text-[12px] text-gold">04</span>
+                    <h3 class="font-display text-2xl text-bone font-medium">
+                        Iceberg Health — Auditoría clínica
+                    </h3>
+                    <span class="font-mono text-[10px] uppercase tracking-wider text-amber-400/80 ml-auto whitespace-nowrap">case study</span>
+                </div>
+                <p class="text-white/70 leading-relaxed font-light max-w-2xl">
+                    SaaS de auditoría clínica para pacientes polifarmacéuticos.
+                    Un LLM extrae historiales no estructurados a JSON; un motor
+                    determinista en Pandas audita contra la base CIMA de la
+                    AEMPS (~30 000 fármacos) y detecta interacciones,
+                    contraindicaciones y ajustes de dosis. Cero alucinaciones
+                    clínicas, audit log trazable. Desplegado en AWS ECS
+                    Fargate.
+                </p>
+                <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 font-mono text-[11px] text-white/40">
+                    <span>Claude</span><span>FastAPI</span><span>HTMX</span><span>AWS ECS</span><span>healthtech</span>
+                </div>
+                <a href="https://github.com/imartinsorribes/iceberg-health-audit" target="_blank" rel="noopener" class="inline-block mt-3 font-mono text-[12px] text-bone gold-hover underline decoration-white/20 underline-offset-4">
+                    ver case study →
+                </a>
+            </li>
+
+        </ol>
+
+        <p class="text-[13px] text-white/40 mt-12 font-light">
+            Más cosas en
+            <a href="https://github.com/imartinsorribes" target="_blank" rel="noopener" class="text-bone gold-hover underline decoration-white/20 underline-offset-4">github.com/imartinsorribes</a>.
+        </p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="max-w-3xl mx-auto px-6 py-20 reveal">
+        <p class="text-[13px] text-gold uppercase tracking-[0.2em] mb-10 font-medium">
+            Contacto
+        </p>
+
+        <h2 class="font-display text-3xl md:text-4xl font-medium text-bone leading-tight max-w-2xl">
+            Si estás reclutando o quieres comentar algún proyecto, escríbeme.
+        </h2>
+
+        <div class="mt-10 space-y-2 font-mono text-[14px]">
+            <p class="text-white/40">
+                email
+                <a href="mailto:imxrtins@gmail.com" class="ml-3 text-bone gold-hover underline decoration-white/20 underline-offset-4">
+                    imxrtins@gmail.com
+                </a>
+            </p>
+            <p class="text-white/40">
+                linkedin
+                <a href="https://www.linkedin.com/in/inaki-martin-sorribes/" target="_blank" rel="noopener" class="ml-3 text-bone gold-hover underline decoration-white/20 underline-offset-4">
+                    /in/inaki-martin-sorribes
+                </a>
+            </p>
+            <p class="text-white/40">
+                github
+                <a href="https://github.com/imartinsorribes" target="_blank" rel="noopener" class="ml-3 text-bone gold-hover underline decoration-white/20 underline-offset-4">
+                    @imartinsorribes
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="max-w-3xl mx-auto px-6 py-16 mt-16">
+        <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-mono text-[11px] text-white/30">
+            <p>© 2026 Iñaki Martín Sorribes · Valencia</p>
+            <a href="https://github.com/imartinsorribes/imartinsorribes.github.io" target="_blank" rel="noopener" class="gold-hover">
+                source ↗
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
