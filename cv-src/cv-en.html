@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root { --ink: #1c1d1f; --muted: #5f6368; --soft: #74787d; --rule: #cfd2d6; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    font-size: 9.1pt;
+    line-height: 1.22;
+    padding: 7.5mm 14mm 5mm;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .head { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; }
+  .head h1 { font-size: 21pt; font-weight: 700; letter-spacing: -0.2px; line-height: 1.05; }
+  .subtitle { margin-top: 4px; font-size: 9.8pt; color: var(--muted); }
+  .contact { margin-top: 4px; font-size: 8.7pt; color: var(--muted); }
+  .contact a { text-decoration: underline; text-underline-offset: 2px; text-decoration-color: #b9bcc1; }
+  .sep { color: #aeb1b6; padding: 0 4px; }
+  .photo { width: 68px; height: 84px; flex-shrink: 0; object-fit: cover; border-radius: 6px; }
+
+  section { margin-top: 4.5px; }
+  .sec-title {
+    font-size: 8.3pt; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
+    color: var(--ink); padding-bottom: 2.5px; border-bottom: 0.6pt solid var(--rule); margin-bottom: 3px;
+  }
+
+  p.summary { color: #2c2e30; }
+
+  .entry { margin-bottom: 2.5px; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .entry-title { font-weight: 700; font-size: 9.6pt; }
+  .entry-title .light { font-weight: 400; }
+  .entry-date { font-style: italic; color: var(--soft); font-size: 8.9pt; white-space: nowrap; }
+  .entry-meta { font-style: italic; color: var(--soft); font-size: 8.8pt; }
+  .stack { font-style: italic; color: var(--soft); font-size: 8.8pt; }
+
+  ul { list-style: none; margin-top: 1.5px; }
+  li { position: relative; padding-left: 11px; margin-top: 0.5px; color: #2c2e30; }
+  li::before { content: '•'; position: absolute; left: 0; color: #9aa0a6; }
+
+  .skills p { margin-top: 1px; }
+  .skills b { font-weight: 700; }
+</style>
+</head>
+<body>
+
+  <header class="head">
+    <div>
+      <h1>Iñaki Martín Sorribes</h1>
+      <div class="subtitle">Data Science Student · Co-Founder @ Iceberg Datum Analytics · Valencia, Spain</div>
+      <div class="contact">
+        <a href="mailto:imxrtins@gmail.com">imxrtins@gmail.com</a><span class="sep">·</span><a href="https://imartinsorribes.github.io">imartinsorribes.github.io</a><span class="sep">·</span><a href="https://linkedin.com/in/inaki-martin-sorribes">linkedin.com/in/inaki-martin-sorribes</a><span class="sep">·</span><a href="https://github.com/imartinsorribes">github.com/imartinsorribes</a>
+      </div>
+    </div>
+    <img class="photo" src="avatar.png" alt="Iñaki Martín Sorribes" />
+  </header>
+
+  <section>
+    <div class="sec-title">Summary</div>
+    <p class="summary">
+      Data Science student at Universitat de València and co-founder of Iceberg Datum Analytics, an AI startup
+      delivering ML and NLP solutions for the legal and healthcare sectors. Experience deploying production
+      systems on AWS. Seeking a September 2026 internship as ML/NLP engineer or data scientist, open to fintech,
+      retail, industrial, healthcare or energy.
+    </p>
+  </section>
+
+  <section>
+    <div class="sec-title">Experience</div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">Co-Founder <span class="light">— Iceberg Datum Analytics S.L.</span></div>
+        <div class="entry-date">Nov 2025 — Present</div>
+      </div>
+      <div class="entry-meta">Valencia, Spain · Part-time</div>
+      <ul>
+        <li>Co-lead the technical development of Iceberg Health (healthcare data platform) and Iceberg Law (LLM-based document processing), alongside business development and contract negotiation under NDA.</li>
+        <li>Designed and deployed production infrastructure on AWS with Docker and FastAPI.</li>
+        <li>Active pilots under NDA with potential clients in both sectors.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">Research Intern <span class="light">— IDAL, Universitat de València</span></div>
+        <div class="entry-date">Jun — Jul 2026</div>
+      </div>
+      <div class="entry-meta">Valencia, Spain · Research stay</div>
+      <ul>
+        <li>Research stay at IDAL (Intelligent Data Analysis Laboratory), the Machine Learning research group of Universitat de València.</li>
+        <li>Research line and final-year thesis (TFG): forecasting electricity demand and price under extreme weather events, comparing classical models (SARIMA, Prophet) with XGBoost, LSTM and the Temporal Fusion Transformer.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title">Projects</div>
+
+    <div class="entry">
+      <div class="entry-title">Fraud Detection System <span class="light">— Personal Project</span></div>
+      <div class="stack">Python · XGBoost · SHAP · FastAPI</div>
+      <ul>
+        <li>End-to-end fraud detection pipeline on PaySim (Kaggle, ~6M mobile money transactions) with extreme class imbalance; compared sampling strategies and evaluated with precision-recall AUC.</li>
+        <li>Model explainability with SHAP and deployment as a REST API with FastAPI on Docker. 99.76% recall on the test set.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-title">Iceberg Law <span class="light">— Legal Document Processing</span></div>
+      <div class="stack">Python · LLMs · NLP</div>
+      <ul>
+        <li>Automated extraction and structuring of legal documents and invoices using Large Language Models.</li>
+        <li>On-premise GDPR/LOPD anonymization engine for Spanish PDFs: checksum-based regex (DNI, NIE, IBAN), NER with BSC-RoBERTa and a local LLM (Qwen3 via Ollama), with SHA-256 audit log and post-redaction OCR verification.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-title">Iberia Geo-Alert <span class="light">— Personal Project</span></div>
+      <div class="stack">Python · FastAPI · Sentinel Hub · Leaflet</div>
+      <ul>
+        <li>Real-time dashboard of natural events aggregating four public APIs (USGS, NASA EONET, NASA FIRMS, Sentinel Hub).</li>
+        <li>On-demand Normalised Burn Ratio (NBR) analysis on Sentinel-2 imagery for wildfires in the Iberian Peninsula; modular FastAPI + Pydantic backend, Leaflet frontend with clustering.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-title">CENDRA <span class="light">— Fire-Risk Atlas</span></div>
+      <div class="stack">Python · GeoPandas · MapLibre · open data</div>
+      <ul>
+        <li>Web atlas of fire risk for the 214,000 buildings of València, built entirely from open data (Catastro INSPIRE 3D + 10 municipal layers), motivated by the Campanar fire.</li>
+        <li>Parametric, auditable per-building risk index cross-referenced with fire-brigade response times. Model mirrored in Python and JS with 40 tests, deployed on Cloudflare Pages.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title">Education</div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">B.Sc. in Data Science <span class="light">— Universitat de València</span></div>
+        <div class="entry-date">2023 — 2027</div>
+      </div>
+      <ul>
+        <li>GPA 7.58/10 · Top grades with honors in Machine Learning and Probability &amp; Simulation. Coursework: Statistics, Databases, Time Series Analysis, Deep Learning.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">Higher Vocational Degree in IT <span class="light">— IES Abastos</span></div>
+        <div class="entry-date">2020 — 2022</div>
+      </div>
+      <ul>
+        <li>Network and Systems Administration. 4-month internship at Slimbook: hardware assembly and Bash scripting for automated hardware testing.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title">Awards</div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">First Prize <span class="light">— Campus Salud Gandia Hackathon 2026</span></div>
+        <div class="entry-date">2026</div>
+      </div>
+      <ul>
+        <li>Gandia Obesogenic Panel: a predictive urban-health panel for Gandia City Council that diagnoses the obesogenic environment by neighborhood, simulates urban interventions and projects their health, economic and equity impact. FastAPI backend, React + Leaflet frontend, NetworkX street-graph routing and a RAG assistant with guardrails. Team of 4 in 30 hours.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">Honorable Mention <span class="light">— Valencia City Data Visualization Contest</span></div>
+        <div class="entry-date">2025</div>
+      </div>
+      <ul>
+        <li>Team project on flood-prone areas in the Valencian Community, awarded by Valencia City Council and ETSE-UV in response to the DANA floods.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="skills">
+    <div class="sec-title">Skills</div>
+    <p><b>Languages &amp; ML:</b> Python, SQL, R, Machine Learning, NLP, Large Language Models, Time Series / Forecasting.</p>
+    <p><b>Cloud &amp; Tools:</b> AWS, Docker, FastAPI, Bash, Git, GeoPandas, NetworkX, Streamlit, Power BI.</p>
+    <p><b>Languages:</b> Spanish (native), Valencian/Catalan (native), English (B2).</p>
+  </section>
+
+</body>
+</html>
